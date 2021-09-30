@@ -5,10 +5,11 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/backend/app
+      - ./backend:/backend/app
+    container_name: activity7_node_1
     env_file:
       - ./backend/.env
-    # command: ["/bin/sh", "-c", "yarn install --production=false && yarn dev"]
+    command: ["/bin/sh", "-c", "yarn install && yarn dev"]
     depends_on:
       - mongo
 
@@ -18,7 +19,6 @@ services:
       - "27017:27017"
     volumes:
       - mongo:/data/db
-    # command: ["/bin/sh", "-c", "yarn install && yarn dev"]
     environment:
       - MONGO_INITDB_ROOT_USERNAME=homestead
       - MONGO_INITDB_ROOT_PASSWORD=secret
@@ -29,6 +29,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/fronted/app
+    command: ["/bin/sh", "-c", "yarn install && yarn dev"]
 volumes:
   mongo:
 networks:
