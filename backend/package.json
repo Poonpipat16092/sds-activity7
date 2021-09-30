@@ -1,0 +1,33 @@
+{
+  "name": "blog-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/ -d dist/",
+    "start": "node dist/server.js",
+    "dev": "OVERRIDE_DEFAULT_LOGGER=false && nodemon src/server.js --exec babel-node -e js"
+  },
+  "dependencies": {
+    "body-parser": "1.19.*",
+    "cors": "2.8.5",
+    "dotenv": "8.2.*",
+    "express": "4.17.*",
+    "express-validator": "6.10.*",
+    "express-async-errors": "3.1.*",
+    "mongoose": "5.12.*"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.13.*",
+    "@babel/core": "7.13.*",
+    "@babel/node": "7.13.*",
+    "@babel/preset-env": "7.13.*",
+    "nodemon": "2.0.*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.thinknet.co.th:suwat/blog-service.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
